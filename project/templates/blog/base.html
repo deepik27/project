@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+{% load blog_tags %}
+<html lang="en">
+<head>
+    <title>{% block title_block %}{% endblock %}</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.3/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" >
+
+</head>
+<body>
+<div class="content">
+    {%block content %}{%endblock%}
+</div>
+<div class="sidebar">
+    <h2>Python Blog</h2>
+    <p>The total number of published posts upto today: <span id="pcount">{%total_posts%}</span></p>
+    <h3>Latest Posts: </h3> {% show_latest_posts %}
+
+</div>
+</body>
+</html>
